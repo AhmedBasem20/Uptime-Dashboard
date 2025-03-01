@@ -1,33 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Uptime Dashboard
+
+A service monitoring dashboard built with Next.js and Tailwind CSS. It displays the status of various servers over the last 90, 60, or 30 days, depending on the screen size.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js
+- npm
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/AhmedBasem20/Uptime-Dashboard.git
+   cd Uptime-Dashboard
+   ```
 
-## Learn More
+2. Install the dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running the Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Open your browser and navigate to `http://localhost:3000` to view the application.
+
+## Overview
+
+### Implementation
+
+- **Next.js**: Used for server-side rendering and routing.
+- **Tailwind CSS**: Utilized for styling with utility-first classes.
+- **React Hooks**: Custom hooks (`useServerData`, `useResponsiveHistory`) manage state and logic.
+
+### Design Choices
+
+- **Responsive Design**: The application adjusts the number of days displayed based on screen size:
+  - Large screens (≥1024px): 90 days
+  - Medium screens (≥768px): 60 days
+  - Small screens (<768px): 30 days
+
+- **Component Structure**: The application is divided into logical and presentational components:
+  - **Logical Components**: Handle data fetching and state management.
+  - **Presentational Components**: Focus on UI rendering.
+
+- **Separation of Concerns**: Utilities and constants are separated into their own files for better maintainability.
+
+- **Dynamic Data**: Server status history is generated dynamically to simulate real-world data.
+
+## Folder Structure
+
+- **/app**: Contains the main application files.
+  - **/components**: UI components.
+  - **/hooks**: Custom React hooks.
+  - **/utils**: Utility functions and constants.
+  - **/styles**: Global styles.
 
 ## Deploy on Vercel
 
